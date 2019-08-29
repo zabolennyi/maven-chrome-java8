@@ -9,8 +9,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
 	&& sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
-# Install ChromeDriver v75
-ARG CHROME_DRIVER_VERSION=75.0.3770.90
+# Install ChromeDriver v76
+ARG CHROME_DRIVER_VERSION=76.0.3809.126
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
 	&& rm -rf /opt/chromedriver \
 	&& unzip /tmp/chromedriver_linux64.zip -d /opt \

@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-8
+FROM maven:3.8.1-jdk-8-openj9
 
 # Install Google Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -9,8 +9,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
 	&& sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
-# Install ChromeDriver v80
-ARG CHROME_DRIVER_VERSION=83.0.4103.39
+# Install ChromeDriver v90
+ARG CHROME_DRIVER_VERSION=90.0.4430.24
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
 	&& rm -rf /opt/chromedriver \
 	&& unzip /tmp/chromedriver_linux64.zip -d /opt \

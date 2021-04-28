@@ -1,4 +1,4 @@
-FROM maven:3.8.1-jdk-8-openj9
+FROM maven:3.6.0-jdk-8
 
 # Install Google Chrome
 RUN apt-get update \

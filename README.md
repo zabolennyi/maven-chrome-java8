@@ -5,9 +5,9 @@ Docker image for Java automated UI tests with Serenity.
 Includes:
 
 * JDK 8
-* Maven 3.6.0
-* Chrome (v83)
-* ChromeDriver 83
+* Maven 3.8.1
+* Chrome (v90)
+* ChromeDriver 90
 
 Available on [Docker Hub](https://hub.docker.com/r/zabolennyi/maven-chrome-java8/).
 

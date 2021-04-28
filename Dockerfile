@@ -1,7 +1,9 @@
 FROM maven:3.8.1-jdk-8-openj9
 
 # Install Google Chrome
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+RUN apt-get update \
+  	&& apt-get install -y wget \
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
 	&& echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
 	&& apt-get update -qqy \
 	&& apt-get -qqy install google-chrome-stable \

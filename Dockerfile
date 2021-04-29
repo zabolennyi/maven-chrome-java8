@@ -2,8 +2,8 @@ FROM maven:3.8.1-adoptopenjdk-15
 
 # Install Google Chrome
 RUN apt-get update \
-  	&& apt-get install -y wget \
-	
+	&& apt-get install -y wget gnupg2 gnupg gnupg1 unzip
+
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
 	&& echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
 	&& apt-get update -qqy \

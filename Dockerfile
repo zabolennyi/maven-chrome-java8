@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-8
+FROM maven:3.8.1-adoptopenjdk-15
 
 # Install Google Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \

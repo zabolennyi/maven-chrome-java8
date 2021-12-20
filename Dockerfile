@@ -13,7 +13,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
 # Install ChromeDriver v95
-ARG CHROME_DRIVER_VERSION=95.0.4638.54
+
+ARG CHROME_DRIVER_VERSION=96.0.4664.45
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
 	&& rm -rf /opt/chromedriver \
 	&& unzip /tmp/chromedriver_linux64.zip -d /opt \

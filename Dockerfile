@@ -1,5 +1,7 @@
 FROM maven:3.8.1-adoptopenjdk-15
 
+# Executor container for EY auto tests
+
 # Install Google Chrome
 RUN apt-get update \
 	&& apt-get install -y wget gnupg2 gnupg gnupg1 unzip
@@ -12,9 +14,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
 	&& sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
-# Install ChromeDriver v97
+# Install ChromeDriver v98
 
-ARG CHROME_DRIVER_VERSION=97.0.4692.71
+ARG CHROME_DRIVER_VERSION=98.0.4758.80
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
 	&& rm -rf /opt/chromedriver \
 	&& unzip /tmp/chromedriver_linux64.zip -d /opt \

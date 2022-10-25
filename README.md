@@ -6,8 +6,8 @@ Includes:
 
 * JDK 15
 * Maven 3.8.1
-* Chrome (v100)
-* ChromeDriver 100
+* Chrome (v106)
+* ChromeDriver 106
 
 Available on [Docker Hub](https://hub.docker.com/r/zabolennyi/maven-chrome-java8/).
 
